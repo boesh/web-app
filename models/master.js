@@ -23,9 +23,6 @@ const User = sequelize.define("User", {
     cities: {
       type: Sequelize.JSON
     },
-    bookeddates: {
-      type: Sequelize.JSON
-    },
     rating: {
       type: Sequelize.FLOAT,
       allowNull: false
