@@ -1,12 +1,13 @@
 const bcrypt = require("bcryptjs");
+require("dotenv").config()
 
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize("adminsdb", "root", "h7%kVyfPqP9p!LyJ!8*%", {
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
   dialect: "mysql",
-  host: "localhost",
+  host: process.env.DB_HOST,
   define: {
     timestamps: false,
-    tableName: "admins"
+    tableName: process.env.DB_ADMINS_TABLE_NAME
   }
 });
 
